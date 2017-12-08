@@ -1,54 +1,58 @@
-$(document).ready(function(){
+$(window).ready(function(){
+  $("#btnStart").click(function(){
+    const minutes = 25;
+    const seconds = 0;
 
-  const minutes = 25;
-  const seconds = 0;
+    console.log("PLLOK");
 
-  $("#numMinutes").attr("value", minutes);
-  $("#numSeconds").attr("value", seconds);
+    $("#numMinutes").attr("value", minutes);
+    $("#numSeconds").attr("value", seconds);
 
-  const s = document.getElementById("numSeconds").value;
-  const m = document.getElementById("numMinutes").value;
-  const endTime = (s * 1000) + (m * 60 * 1000);
+    const s = document.getElementById("numSeconds").value;
+    const m = document.getElementById("numMinutes").value;
+    const endTime = (s * 1000) + (m * 60 * 1000);
 
-  var currentTime = Date.parse(new Date());
-  var deadline = new Date(currentTime +endTime);
+    var currentTime = Date.parse(new Date());
+    var deadline = new Date(currentTime +endTime);
   
 
-  function getTimeRemaining(endtime){
-    var t = Date.parse(endtime) - Date.parse(new Date());
-    var seconds = Math.floor( (t/1000) % 60 );
-    var minutes = Math.floor( (t/1000/60) % 60 );
-    return {
-      "total": t,
-      "minutes": minutes,
-      "seconds": seconds
-    };
-  }
-
-  function initializeClock(id, endtime){
-    var clock = document.getElementById(id);
-    var minutesSpan = clock.querySelector(".minutes");
-    var secondsSpan = clock.querySelector(".seconds");
-    
-    function updateClock(){
-      var t = getTimeRemaining(endtime);
-
-      minutesSpan.innerHTML = ("0" + t.minutes).slice(-2);
-      secondsSpan.innerHTML = ("0" + t.seconds).slice(-2);
-      
-      if(t.total<=0){
-        clearInterval(timeinterval);
-      }
+    function getTimeRemaining(endtime){
+      var t = Date.parse(endtime) - Date.parse(new Date());
+      var seconds = Math.floor( (t/1000) % 60 );
+      var minutes = Math.floor( (t/1000/60) % 60 );
+      return {
+        "total": t,
+        "minutes": minutes,
+        "seconds": seconds
+      };
     }
-    
-    updateClock(); // run function once at first to avoid delay
-    var timeinterval = setInterval(updateClock,500);
-    
-  }
 
-  initializeClock("clockdiv", deadline);  
+    function initializeClock(id, endtime){
+      var clock = document.getElementById(id);
+      var minutesSpan = clock.querySelector(".minutes");
+      var secondsSpan = clock.querySelector(".seconds");
+    
+      function updateClock(){
+        var t = getTimeRemaining(endtime);
 
-  /*  
+        minutesSpan.innerHTML = ("0" + t.minutes).slice(-2);
+        secondsSpan.innerHTML = ("0" + t.seconds).slice(-2);
+      
+        if(t.total<=0){
+          clearInterval(timeinterval);
+        }
+      }
+
+      updateClock(); // run function once at first to avoid delay
+      var timeinterval = setInterval(updateClock,500);
+
+    }
+  
+    initializeClock("clockdiv", deadline);
+
+  });
+});
+/*  
   $("#btnStart").on("click", getTimeRemaining());
     
   //m = checkTime(m);
@@ -88,5 +92,6 @@ $(document).ready(function(){
   } 
 
   $(window).on("load", (startTime()));
-  */
-});
+  
+}
+*/
