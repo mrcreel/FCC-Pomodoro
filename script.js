@@ -1,12 +1,10 @@
 $(window).ready(function(){
   $("#btnStart").click(function(){
-    const minutes = 25;
-    const seconds = 0;
+    // const minutes = 25;
+    // const seconds = 0;
 
-    console.log("PLLOK");
-
-    $("#numMinutes").attr("value", minutes);
-    $("#numSeconds").attr("value", seconds);
+    $("#numMinutes").attr("value", 25);
+    $("#numSeconds").attr("value", 0);
 
     const s = document.getElementById("numSeconds").value;
     const m = document.getElementById("numMinutes").value;
