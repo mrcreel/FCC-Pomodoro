@@ -1,95 +1,50 @@
-$(window).ready(function(){
-  $("#btnStart").click(function(){
-    // const minutes = 25;
-    // const seconds = 0;
+var ele = "";
+var elezIndex = 0;
+/*  var myVar =  */ setInterval(myTimer, 1000);
 
-    $("#numMinutes").attr("value", 25);
-    $("#numSeconds").attr("value", 0);
-
-    const s = document.getElementById("numSeconds").value;
-    const m = document.getElementById("numMinutes").value;
-    const endTime = (s * 1000) + (m * 60 * 1000);
-
-    var currentTime = Date.parse(new Date());
-    var deadline = new Date(currentTime +endTime);
+function myTimer() {
+  // var minTensZindex = parseInt(document.getElementById("minTens0").style.zIndex);
   
-
-    function getTimeRemaining(endtime){
-      var t = Date.parse(endtime) - Date.parse(new Date());
-      var seconds = Math.floor( (t/1000) % 60 );
-      var minutes = Math.floor( (t/1000/60) % 60 );
-      return {
-        "total": t,
-        "minutes": minutes,
-        "seconds": seconds
-      };
-    }
-
-    function initializeClock(id, endtime){
-      var clock = document.getElementById(id);
-      var minutesSpan = clock.querySelector(".minutes");
-      var secondsSpan = clock.querySelector(".seconds");
-    
-      function updateClock(){
-        var t = getTimeRemaining(endtime);
-
-        minutesSpan.innerHTML = ("0" + t.minutes).slice(-2);
-        secondsSpan.innerHTML = ("0" + t.seconds).slice(-2);
-      
-        if(t.total<=0){
-          clearInterval(timeinterval);
-        }
-      }
-
-      updateClock(); // run function once at first to avoid delay
-      var timeinterval = setInterval(updateClock,500);
-
-    }
+  var secondsOnes;
+  var secondsTens = [];
+  var minutesOnes = [];
+  // var minutesTens = [];
   
-    initializeClock("clockdiv", deadline);
+  secondsOnes = decrementPaper("seconds-ones");
 
-  });
-});
-/*  
-  $("#btnStart").on("click", getTimeRemaining());
-    
-  //m = checkTime(m);
-  //s = checkTime(s);
-
-  //var t = setTimeout(startTime, 500);
-
-  
-
-  function checkTime(i) {
-    if (i < 10) {i = "0" + i;}  // add zero in front of numbers < 10
-    return i;
+  var secOneZindex = parseInt(document.getElementById("secOnes9").style.zIndex);
+  if (secOneZindex === secondsOnes.length-1) {
+    secondsTens = decrementPaper("seconds-tens");
   }
-
-  function getTimeRemaining(){    
-    const start = Date.parse(new Date());    
-    var t = start + endTime - start;
-    console.log(t);
-    return t;
-  }/*
-
-    var seconds = Math.floor( (t/1000) % 60 );
-    var minutes = Math.floor( (t/1000/60) % 60 );
-    var hours = Math.floor( (t/(1000*60*60)) % 24 );
-    var days = Math.floor( t/(1000*60*60*24) );
-
-    document.getElementById("startTime").innerHTML = start;
-    document.getElementById("targetTime").innerHTML = end;
-
-    return {
-      "total": t,
-      "days": days,
-      "hours": hours,
-      "minutes": minutes,
-      "seconds": seconds
-    };
-  } 
-
-  $(window).on("load", (startTime()));
-  
+  var secTenZindex = parseInt(document.getElementById("secTens5").style.zIndex);
+  if (secTenZindex === secondsTens.length-1) {
+    minutesOnes = decrementPaper("minutes-ones");
+  }
+  var minOneZindex = parseInt(document.getElementById("minOnes9").style.zIndex);
+  if (minOneZindex === minutesOnes.length-1) {
+    decrementPaper("minutes-tens");
+  }
 }
-*/
+
+function decrementPaper(cls) {
+  var arrCls = document.getElementsByClassName(cls);
+
+  for (var i = 0; i < arrCls.length; i++) {
+    ele = arrCls[i];
+    elezIndex = parseInt(ele.style.zIndex);
+    if (elezIndex === arrCls.length - 1) {
+      elezIndex = 0;
+      ele.style.zIndex = elezIndex;
+    } else {
+      elezIndex++;
+      ele.style.zIndex = elezIndex;
+    }
+  }
+  return arrCls;
+}
+$(document).ready(function() {
+
+
+  
+
+});
