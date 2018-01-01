@@ -1,59 +1,61 @@
-<!doctype html>
+
 <html lang="">
 
-<head>
-  <meta charset="utf-8">
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/segment7" type="text/css" />
-  <link href="./images/favicon.ico" rel="icon" type="image/x-icon" />
-  <title>Pomodoro Clock</title>
-
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <!-- Place favicon.ico in the root directory -->
-
-  <!-- build:css styles/vendor.css -->
-  <!-- bower:css -->
-  <!-- endbower -->
-  <!-- endbuild -->
-
-  <!-- build:css styles/main.css -->
-  <link rel="stylesheet" href="styles/main.css">
-  <!-- endbuild -->
-
-</head>
-
-<body>
-  <!--[if IE]>
-      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
-
-  <div class="container grid-container clockDiv">
-    <!-- -->
-    <button class="grid-item" id="btnStart">Start</button>
-    <button class="grid-item" id="btnMinutesUp">Minutes +</button>
-    <button class="grid-item" id="btnMinutesDown">Minutes -</button>
-    <button class="grid-item" id="btnSecondsUp">Seconds +</button>
-    <button class="grid-item" id="btnSecondsDown">Seconds -</button>
-    <!-- -->
-    <div class="grid-item paper" id="minutesTens">0</div>
-    <div class="grid-item paper" id="minutesOnes">0</div>
-    <div class="grid-item paper" id="secondsTens">0</div>
-    <div class="grid-item paper" id="secondsOnes">0
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/segment7" type="text/css" />
+    
+    <title>Pomodoro Clock</title>
+  
+    <!-- <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+    <link href="./images/favicon.ico" rel="icon" type="image/x-icon"
+  
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+  
+    <!-- build:css styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+  
+  </head>
+  
+  <body>
+    <!--[if IE]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+      <![endif]-->
+  
+    <div class="container grid-container clockDiv">
+      <!-- -->
+      <button class="grid-item btn" id="btnStart">Start</button>
+      <button class="grid-item btn" id="btnMinutesUp">Minutes +</button>
+      <button class="grid-item btn" id="btnMinutesDown">Minutes -</button>
+      <button class="grid-item btn" id="btnSecondsDown">Seconds -</button>
+      <button class="grid-item btn" id="btnSecondsUp">Seconds +</button>
+      <!-- -->
+      <div class="grid-item paper" id="minutes"><span></span></div>
+      <div class="grid-item paper" id="seconds"><span></span></div>
+      <!-- -->
+      <button class="grid-item btn" id="btnStop">Stop</button>
+      <!-- -->
+  
     </div>
-    <!-- -->
-    <button id="btnStop">Stop</button>
-  </div>
-
-  <!-- build:js scripts/vendor.js -->
-  <!-- bower:js -->
-  <script src="/bower_components/jquery/dist/jquery.js"></script>
-  <!-- endbower -->
-  <!-- endbuild -->
-
-  <!-- build:js scripts/main.js -->
-  <script src="scripts/main.js"></script>
-  <!-- endbuild -->
-</body>
-
-</html>
+  
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+  
+    <!-- build:js scripts/main.js -->
+    <script src="scripts/main.js"></script>
+    <audio id="myAudio" src="https://www.soundjay.com/clock/sounds/alarm-clock-01.mp3" autostart="false"></audio>
+    <!-- endbuild -->
+  </body>
+  
+  </html>
+  
