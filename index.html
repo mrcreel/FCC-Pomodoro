@@ -3,7 +3,6 @@
 <head>
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
   <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/segment7" type="text/css" />
-  <link href="https://fonts.googleapis.com/css?family=Codystar" rel="stylesheet">
   <!-- Load jQuery -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js">
   </script>
@@ -11,49 +10,22 @@
   <script src="script.js" type="text/javascript"></script>
   <link href="styles.css" rel="stylesheet" type="text/css">
 
+  <title>Pomodoro Clock</title>
+
 </head>
 
-<div class="grid-container clockDiv">
-<!-- -->
-  <button id="btnSeconds">Seconds</button>
-  <button id="btnMinutes">Minutes</button>
-  <button id="btnStart">Start</button>
-<!-- -->
-  <div class="grid-item paper minutes-tens" style="z-index: 5;" id="minTens0">0</div>
-  <div class="grid-item paper minutes-tens" style="z-index: 0;" id="minTens1">1</div>
-  <div class="grid-item paper minutes-tens" style="z-index: 1;" id="minTens2">2</div>
-  <div class="grid-item paper minutes-tens" style="z-index: 2;" id="minTens3">3</div>
-  <div class="grid-item paper minutes-tens" style="z-index: 3;" id="minTens4">4</div>
-  <div class="grid-item paper minutes-tens" style="z-index: 4;" id="minTens5">5</div>
+<div class="container grid-container clockDiv">
   <!-- -->
-  <div class="grid-item paper minutes-ones" style="z-index: 4;" id="minOnes0">0</div>
-  <div class="grid-item paper minutes-ones" style="z-index: 5;" id="minOnes1">1</div>
-  <div class="grid-item paper minutes-ones" style="z-index: 6;" id="minOnes2">2</div>
-  <div class="grid-item paper minutes-ones" style="z-index: 7;" id="minOnes3">3</div>
-  <div class="grid-item paper minutes-ones" style="z-index: 8;" id="minOnes4">4</div>
-  <div class="grid-item paper minutes-ones" style="z-index: 9;" id="minOnes5">5</div>
-  <div class="grid-item paper minutes-ones" style="z-index: 0;" id="minOnes6">6</div>
-  <div class="grid-item paper minutes-ones" style="z-index: 1;" id="minOnes7">7</div>
-  <div class="grid-item paper minutes-ones" style="z-index: 2;" id="minOnes8">8</div>
-  <div class="grid-item paper minutes-ones" style="z-index: 3;" id="minOnes9">9</div>
+  <button class="grid-item" id="btnStart">Start</button>
+  <button class="grid-item" id="btnMinutesUp">Minutes +</button>
+  <button class="grid-item" id="btnMinutesDown">Minutes -</button>
+  <button class="grid-item" id="btnSecondsUp">Seconds +</button>
+  <button class="grid-item" id="btnSecondsDown">Seconds -</button>  
   <!-- -->
-  <div class="grid-item paper seconds-tens" style="z-index: 5;" id="secTens0">0</div>
-  <div class="grid-item paper seconds-tens" style="z-index: 0;" id="secTens1">1</div>
-  <div class="grid-item paper seconds-tens" style="z-index: 1;" id="secTens2">2</div>
-  <div class="grid-item paper seconds-tens" style="z-index: 2;" id="secTens3">3</div>
-  <div class="grid-item paper seconds-tens" style="z-index: 3;" id="secTens4">4</div>
-  <div class="grid-item paper seconds-tens" style="z-index: 4;" id="secTens5">5</div>
-  <!-- -->
-  <div class="grid-item paper seconds-ones" style="z-index: 9;" id="secOnes0">0</div>
-  <div class="grid-item paper seconds-ones" style="z-index: 0;" id="secOnes1">1</div>
-  <div class="grid-item paper seconds-ones" style="z-index: 1;" id="secOnes2">2</div>
-  <div class="grid-item paper seconds-ones" style="z-index: 2;" id="secOnes3">3</div>
-  <div class="grid-item paper seconds-ones" style="z-index: 3;" id="secOnes4">4</div>
-  <div class="grid-item paper seconds-ones" style="z-index: 4;" id="secOnes5">5</div>
-  <div class="grid-item paper seconds-ones" style="z-index: 5;" id="secOnes6">6</div>
-  <div class="grid-item paper seconds-ones" style="z-index: 6;" id="secOnes7">7</div>
-  <div class="grid-item paper seconds-ones" style="z-index: 7;" id="secOnes8">8</div>
-  <div class="grid-item paper seconds-ones" style="z-index: 8;" id="secOnes9">9</div>
+  <div class="grid-item paper" id="minutesTens">0</div>
+  <div class="grid-item paper" id="minutesOnes">0</div>
+  <div class="grid-item paper" id="secondsTens">0</div>
+  <div class="grid-item paper" id="secondsOnes">0</div>
   <!-- -->
   <button id="btnStop">Stop</button>
 </div>
